@@ -1,8 +1,9 @@
-import { useState } from "react";
+
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 const YourDetails = () => {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    const [firstName, setFirstName] = useLocalStorage("first-name", "");
+    const [lastName, setLastName] = useLocalStorage("last-name", "");
 
     return (
         <div className="flex gap-2   flex-1 flex-col justify-center items-center w-full">
