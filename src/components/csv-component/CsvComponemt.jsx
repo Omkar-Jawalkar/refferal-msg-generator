@@ -65,18 +65,6 @@ const CsvComponemt = () => {
                     Submit
                 </button>
             </form>
-
-            {parsedData?.map((data, index) => {
-                return (
-                    <div
-                        key={index}
-                        className=""
-                        href={data?.employee_linkedin_url}
-                    >
-                        {data?.employee_linkedin_url}
-                    </div>
-                );
-            })}
         </div>
     );
 };
