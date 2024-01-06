@@ -12,8 +12,9 @@ const YourDetails = () => {
                     Prefill Your info
                 </button>
             </div>
-            <div className="flex gap-3">
+            <div className="flex w-full gap-3">
                 <input
+                    className="w-full"
                     value={firstName}
                     onChange={(e) => {
                         setFirstName(e.target.value);
@@ -21,6 +22,7 @@ const YourDetails = () => {
                     placeholder="First Name"
                 />
                 <input
+                    className="w-full"
                     value={lastName}
                     onChange={(e) => {
                         setLastName(e.target.value);
