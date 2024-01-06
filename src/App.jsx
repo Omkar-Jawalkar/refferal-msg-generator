@@ -5,7 +5,7 @@ import Footer from "./components/footer/Footer";
 
 const App = () => {
     return (
-        <div>
+        <div className="flex bg-red-200 justify-center flex-col items-center">
             <Navbar />
             <RouterProvider router={router} />
             <Footer />
