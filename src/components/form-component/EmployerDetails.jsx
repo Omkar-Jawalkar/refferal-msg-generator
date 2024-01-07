@@ -1,15 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import helpReplace from "../../utils/helpReplace";
 import { data } from "../../data/refferalData";
 import useLocalStorage from "../../hooks/useLocalStorage";
+import { MyDetailsContext } from "../../context/MyDetailsContext";
+
 const EmployerDetails = () => {
-    const [firstName, setFirstName] = useLocalStorage("first-name", "");
-    const [lastName, setLastName] = useLocalStorage("last-name", "");
+    const [firstName] = useLocalStorage("first-name", "");
+    const [lastName] = useLocalStorage("last-name", "");
     const [employeeName, setEmployeeName] = useState("");
     const [companyName, setCompanyName] = useState("");
     const [jobId, setJobId] = useState("");
     const [jobLink, setJobLink] = useState("");
     const [role, setRole] = useState("Frontend Developer");
+    const [linkedinUrl, setLinkedinUrl] = useState("");
+    const { setResult } = useContext(MyDetailsContext);
 
     const gererateRefferalMessage = () => {
         let employeeObj = {
@@ -18,9 +22,15 @@ const EmployerDetails = () => {
             job_id: jobId,
             job_link: jobLink,
             role: role,
+            employee_linkedin_url: linkedinUrl,
         };
 
-        helpReplace(firstName + " " + lastName, employeeObj, data[0]);
+        const obj = helpReplace(
+            firstName + " " + lastName,
+            employeeObj,
+            data[0]
+        );
+        setResult((prev) => [...prev, { ...obj, ...employeeObj }]);
     };
 
     return (
@@ -61,6 +71,15 @@ const EmployerDetails = () => {
                 type="text"
                 className="w-full"
                 placeholder="Job Link"
+            />
+            <input
+                value={linkedinUrl}
+                onChange={(e) => {
+                    setLinkedinUrl(e.target.value);
+                }}
+                type="text"
+                className="w-full"
+                placeholder="https://www.linkedin.com/in/omkar-jawalkar-68b658208/"
             />
 
             <button

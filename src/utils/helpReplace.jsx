@@ -17,5 +17,5 @@ export default function helpReplace(myName, dataObj, refferalObject) {
         myName
     );
 
-    console.log(refferalObjectCpy);
+    return refferalObjectCpy;
 }
