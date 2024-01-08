@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { MyDetailsContext } from "../../context/MyDetailsContext";
-import { Link } from "react-router-dom";
+import ParseRefferalMessage from "./ParseRefferalMessage";
+
 const DisplayResults = () => {
     const { result } = useContext(MyDetailsContext);
+
     return (
         <div className="flex flex-col justify-center items-center">
-            <table>
-                <tr>
+            <table className="max-w-screen-lg">
+                <tr className="bg-black/60 text-white">
                     <th className="px-2">Name</th>
                     <th className="px-2">Company</th>
                     <th className="px-2"> Refferal Msg</th>
@@ -14,16 +16,21 @@ const DisplayResults = () => {
                 </tr>
                 {result.map((res, index) => {
                     return (
-                        <tr key={index}>
+                        <tr
+                            className="border-b mb-4 space-x-4 border-black"
+                            key={index}
+                        >
                             <th> {res?.employee_name} </th>
                             <th>{res?.company}</th>
-                            <th>MESG</th>
+                            <th>
+                                <ParseRefferalMessage {...res} />
+                            </th>
                             <th>
                                 <a
                                     className="text-blue-800"
                                     href={res?.employee_linkedin_url}
                                 >
-                                    LINKEDIN LINK
+                                    LINK
                                 </a>
                             </th>
                         </tr>
