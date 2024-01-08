@@ -8,7 +8,7 @@ import { MyDetailsContext } from "../../context/MyDetailsContext";
 const Home = () => {
     const [result, setResult] = useState([]);
     return (
-        <div className="flex flex-col gap-10 justify-center items-center">
+        <div className="flex  flex-col gap-10 justify-center items-center">
             <YourDetails />
             {/* ADDING CONTEXT */}
             <MyDetailsContext.Provider

@@ -16,7 +16,7 @@ import { useRef } from "react";
 import useCopy from "../../hooks/useCopy";
 
 const ParseRefferalMessage = (props) => {
-    const [copiedText, copy] = useCopy();
+    const [, copy] = useCopy();
     const pRef = useRef();
 
     const getAndCopy = () => {
@@ -24,7 +24,7 @@ const ParseRefferalMessage = (props) => {
     };
 
     return (
-        <span className="bg-white relative text-left p-4 overflow-auto w-full flex flex-col justify-start items-start min-w-56 min-h-44 max-h-44">
+        <span className="bg-white shadow-lg m-2 rounded  relative text-left p-4 overflow-auto w-full flex flex-col justify-start items-start min-w-56 min-h-44 max-h-44">
             <span className="absolute right-2 top-2 ">
                 <button onClick={getAndCopy} className="border px-2 py-1">
                     Copy
