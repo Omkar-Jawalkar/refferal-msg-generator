@@ -1,8 +1,23 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { MyDetailsContext } from "../../context/MyDetailsContext";
+import helpReplace from "../../utils/helpReplace";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import { data } from "../../data/refferalData";
 
 const CsvComponemt = () => {
     const [csvFile, setCsvFile] = useState();
+    const [firstName] = useLocalStorage("first-name", "");
+    const [lastName] = useLocalStorage("last-name", "");
+    const { setResult } = useContext(MyDetailsContext);
     const [parsedData, setParsedData] = useState(null);
+    const [fieldsArr] = useState([
+        "employee_name",
+        "company",
+        "role",
+        "job_link",
+        "job_id",
+        "employee_linkedin_url",
+    ]);
 
     const parseCsvData = (csvString) => {
         let resultObj = [];
@@ -29,6 +44,19 @@ const CsvComponemt = () => {
         setParsedData(resultObj);
     };
 
+    useEffect(() => {
+        if (parsedData !== null) {
+            parsedData.map((item) => {
+                let obj = helpReplace(
+                    firstName + " " + lastName,
+                    item,
+                    data[0]
+                );
+                setResult((prev) => [...prev, { ...obj, ...item }]);
+            });
+        }
+    }, [parsedData]);
+
     const submit = (e) => {
         e.preventDefault();
 
@@ -43,10 +71,38 @@ const CsvComponemt = () => {
     };
 
     return (
-        <div className="flex-1 gap-3 flex flex-col justify-center items-center">
-            <p>Note - The Format should go here</p>
+        <div className="flex-1 gap-3 flex flex-col justify-start items-center">
+            <p className="font-bold">
+                {" "}
+                Note - The CSV file should have following fields, with same
+                order. Please refer the{" "}
+                <span className="underline cursor-pointer text-blue-700">
+                    {" "}
+                    Video link{" "}
+                </span>
+                more consise understanding.
+            </p>
+
+            <div className=" w-full flex justify-between items-center px-7 ">
+                <div>
+                    {fieldsArr.map((field) => {
+                        return (
+                            <p
+                                key={field}
+                                className="font-bold m-0  text-start"
+                            >
+                                {field}
+                            </p>
+                        );
+                    })}
+                </div>
+                <span className="underline cursor-pointer font-bold text-blue-700">
+                    Video Link
+                </span>
+            </div>
+
             <form
-                className="flex flex-col gap-3 justify-center items-center"
+                className="flex flex-col my-4 gap-3 justify-center items-center"
                 onSubmit={submit}
             >
                 <input
@@ -57,12 +113,13 @@ const CsvComponemt = () => {
                     accept=".csv"
                     name="csv"
                     id="csv-file"
+                    className="text-center"
                 />
                 <button
                     type="submit"
                     className=" self-stretch bg-green-600 px-2 rounded-md py-1 text-white"
                 >
-                    Submit
+                    Generate Referral message in Bulk
                 </button>
             </form>
         </div>

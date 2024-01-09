@@ -5,9 +5,13 @@ import ParseRefferalMessage from "./ParseRefferalMessage";
 const DisplayResults = () => {
     const { result } = useContext(MyDetailsContext);
 
+    if (result?.length <= 0) {
+        return null;
+    }
+
     return (
         <div className="flex flex-col justify-center items-center">
-            <table className="max-w-screen-lg">
+            <table className=" px-12">
                 <tr className="bg-black/60 text-white">
                     <th className="px-2">Name</th>
                     <th className="px-2">Company</th>
