@@ -4,6 +4,7 @@ import FormComponent from "../../components/form-component/FormComponent";
 import YourDetails from "../../components/form-component/YourDetails";
 import DisplayResults from "../../components/display-results/DisplayResults";
 import { MyDetailsContext } from "../../context/MyDetailsContext";
+import  { Toaster } from "react-hot-toast";
 
 const Home = () => {
     const [result, setResult] = useState([]);
@@ -24,6 +25,7 @@ const Home = () => {
                 </div>
                 <DisplayResults />
             </MyDetailsContext.Provider>
+            <Toaster />
         </div>
     );
 };
