@@ -36,51 +36,74 @@ const EmployerDetails = () => {
     return (
         <div className=" flex flex-col    w-full gap-2 justify-center items-center">
             <h1 className=" text-xl my-2 font-bold">Employer Details</h1>
-            <input
-                value={employeeName}
-                onChange={(e) => {
-                    setEmployeeName(e.target.value);
-                }}
-                type="text"
-                className="w-full"
-                placeholder="Name of Employer"
-            />
-            <input
-                value={companyName}
-                onChange={(e) => {
-                    setCompanyName(e.target.value);
-                }}
-                type="text"
-                className="w-full"
-                placeholder="Company Name"
-            />
-            <input
-                value={jobId}
-                onChange={(e) => {
-                    setJobId(e.target.value);
-                }}
-                type="text"
-                className="w-full"
-                placeholder="Job Id"
-            />
-            <input
-                value={jobLink}
-                onChange={(e) => {
-                    setJobLink(e.target.value);
-                }}
-                type="text"
-                className="w-full"
-                placeholder="Job Link"
-            />
-            <input
-                value={linkedinUrl}
-                onChange={(e) => {
-                    setLinkedinUrl(e.target.value);
-                }}
-                type="text"
-                className="w-full"
-                placeholder="https://www.linkedin.com/in/omkar-jawalkar-68b658208/"
-            />
+
+            {/* EMPLOYEE NAME */}
+            <div className="w-full space-x-1">
+                <label className="text-slate-500"> Employee Name</label>
+                <input
+                    className="w-full border px-2 py-1 rounded"
+                    value={employeeName}
+                    onChange={(e) => {
+                        setEmployeeName(e.target.value);
+                    }}
+                    placeholder="Eg. Vipul Coelho"
+                />
+            </div>
+
+            {/* COMPANY NAME */}
+            <div className="w-full space-x-1">
+                <label className="text-slate-500"> Company Name</label>
+                <input
+                    className="w-full border px-2 py-1 rounded"
+                    value={companyName}
+                    onChange={(e) => {
+                        setCompanyName(e.target.value);
+                    }}
+                    placeholder="Eg. Google"
+                />
+            </div>
+
+            {/* JOB ID */}
+
+            <div className="w-full space-x-1">
+                <label className="text-slate-500"> Job Id</label>
+                <input
+                    className="w-full border px-2 py-1 rounded"
+                    value={jobId}
+                    onChange={(e) => {
+                        setJobId(e.target.value);
+                    }}
+                    placeholder="Eg. 252312"
+                />
+            </div>
+
+            {/* Job Link */}
+
+            <div className="w-full space-x-1">
+                <label className="text-slate-500"> Job Link</label>
+                <input
+                    className="w-full border px-2 py-1 rounded"
+                    value={jobLink}
+                    onChange={(e) => {
+                        setJobLink(e.target.value);
+                    }}
+                    placeholder="Eg. Job Link"
+                />
+            </div>
+
+            {/* EMployee Linkedin URL */}
+
+            <div className="w-full space-x-1">
+                <label className="text-slate-500"> Employee Linked Url</label>
+                <input
+                    className="w-full border px-2 py-1 rounded"
+                    value={linkedinUrl}
+                    onChange={(e) => {
+                        setLinkedinUrl(e.target.value);
+                    }}
+                    placeholder="Eg. https://www.linkedin.com/in/..."
+                />
+            </div>
 
             <button
                 onClick={() => {
