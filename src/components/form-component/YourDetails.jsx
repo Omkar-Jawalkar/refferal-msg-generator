@@ -81,11 +81,16 @@ const YourDetails = () => {
             </div>
 
             {/* SAVE BUTTON */}
-            <div className="  mt-2 w-full text-right">
+            {/* <div className="  mt-2 w-full text-right">
                 <button className=" text-white px-2 py-1  rounded-md  shadow-sm bg-green-600">
                     Save your details
                 </button>
-            </div>
+            </div> */}
+
+            <span className="text-end w-full pt-4 font-semibold">
+                *Your Information will be stored on your browser.
+            </span>
+            <div className="w-full border-2 mt-8"></div>
         </div>
     );
 };
