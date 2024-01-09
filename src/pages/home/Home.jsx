@@ -4,7 +4,7 @@ import FormComponent from "../../components/form-component/FormComponent";
 import YourDetails from "../../components/form-component/YourDetails";
 import DisplayResults from "../../components/display-results/DisplayResults";
 import { MyDetailsContext } from "../../context/MyDetailsContext";
-import  { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const Home = () => {
     const [result, setResult] = useState([]);
@@ -23,6 +23,7 @@ const Home = () => {
                     <span className="text-2xl font-bold">OR</span>
                     <CsvComponemt />
                 </div>
+                <div className="w-full border-2 mt-8"></div>
                 <DisplayResults />
             </MyDetailsContext.Provider>
             <Toaster />
