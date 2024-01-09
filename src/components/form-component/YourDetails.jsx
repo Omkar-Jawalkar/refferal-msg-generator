@@ -8,7 +8,7 @@ const YourDetails = () => {
     const [portfolio, setPortfolio] = useLocalStorage("portfolio-link", "");
 
     return (
-        <div className="flex gap-2   flex-1 flex-col justify-center items-center ">
+        <div className="flex gap-2 px-7 w-full  flex-1 flex-col justify-center items-center ">
             <h1 className=" text-xl my-2 font-bold">Your Details</h1>
 
             <div className="flex w-full flex-col md:flex-row gap-3">

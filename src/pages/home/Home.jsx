@@ -8,7 +8,7 @@ import { MyDetailsContext } from "../../context/MyDetailsContext";
 const Home = () => {
     const [result, setResult] = useState([]);
     return (
-        <div className="flex  flex-col gap-10 justify-center items-center">
+        <div className="flex  w-full flex-col gap-10 justify-center items-center">
             <YourDetails />
             {/* ADDING CONTEXT */}
             <MyDetailsContext.Provider
@@ -17,7 +17,7 @@ const Home = () => {
                     setResult,
                 }}
             >
-                <div className="flex gap-10 w-full justify-center items-center">
+                <div className="flex flex-col lg:flex-row gap-10 w-full   justify-center items-center">
                     <FormComponent />
                     <CsvComponemt />
                 </div>
