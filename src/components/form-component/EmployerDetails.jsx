@@ -11,7 +11,8 @@ const EmployerDetails = () => {
     const [companyName, setCompanyName] = useState("");
     const [jobId, setJobId] = useState("");
     const [jobLink, setJobLink] = useState("");
-    const [role, setRole] = useState("Frontend Developer");
+    const [role] = useState("Frontend Developer");
+    // Role removed
     const [linkedinUrl, setLinkedinUrl] = useState("");
     const { setResult } = useContext(MyDetailsContext);
 
