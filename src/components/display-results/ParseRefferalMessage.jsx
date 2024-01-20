@@ -31,30 +31,58 @@ const ParseRefferalMessage = (props) => {
                 </button>
             </span>
             <p ref={pRef}>
-                {props?.greeting}
-                <br />
-                <br />
-                {props?.body}
-                <br />
-                <br />
-                {props?.opening}
-                <br />
-                <br />
-                {props?.reason}
-                <br />
-                <br />
-                {props?.request}
-                <br />
-                <br />
-                {props?.resume}
-                <br />
-                <br />
+                {props?.greeting && (
+                    <>
+                        {props?.greeting}
+                        <br />
+                        <br />
+                    </>
+                )}
+                {props?.body && (
+                    <>
+                        {props?.body}
+                        <br />
+                        <br />
+                    </>
+                )}
+                {props?.opening && (
+                    <>
+                        {props?.opening}
+                        <br />
+                        <br />
+                    </>
+                )}
+                {props?.reason && (
+                    <>
+                        {props?.reason}
+                        <br />
+                        <br />
+                    </>
+                )}
+                {props?.request && (
+                    <>
+                        {props?.request}
+                        <br />
+                        <br />
+                    </>
+                )}
+                {props?.resume && (
+                    <>
+                        {props?.resume}
+                        <br />
+                        <br />
+                    </>
+                )}
                 {props?.gratitude} {props?.closing}
                 <br />
                 <br />
-                {props?.signature}
-                <br />
-                <br />
+                {props?.signature && (
+                    <>
+                        {props?.signature}
+                        <br />
+                        <br />
+                    </>
+                )}
             </p>
         </span>
     );
