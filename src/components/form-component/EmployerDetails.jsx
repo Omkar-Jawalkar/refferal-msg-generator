@@ -3,6 +3,7 @@ import helpReplace from "../../utils/helpReplace";
 import { data } from "../../data/refferalData";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { MyDetailsContext } from "../../context/MyDetailsContext";
+import generateRandom from "../../utils/generateRandom";
 
 const EmployerDetails = () => {
     const [firstName] = useLocalStorage("first-name", "");
@@ -26,10 +27,12 @@ const EmployerDetails = () => {
             employee_linkedin_url: linkedinUrl,
         };
 
+        let rand = generateRandom(data.length);
+        console.log("random number ", rand);
         const obj = helpReplace(
             firstName + " " + lastName,
             employeeObj,
-            data[0]
+            data[rand]
         );
         setResult((prev) => [...prev, { ...obj, ...employeeObj }]);
     };
