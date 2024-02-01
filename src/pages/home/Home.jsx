@@ -18,7 +18,7 @@ const Home = () => {
                     setResult,
                 }}
             >
-                <div className="flex flex-col lg:flex-row gap-10 w-full   justify-center items-center">
+                <div className="flex flex-col   lg:flex-row gap-10 w-full   justify-center items-start">
                     <FormComponent />
                     <span className="text-2xl font-bold">OR</span>
                     <CsvComponemt />

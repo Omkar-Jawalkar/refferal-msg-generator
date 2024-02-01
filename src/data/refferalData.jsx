@@ -1,6 +1,6 @@
 export const data = [
     {
-        greeting: "Hello #employee_name#",
+        greeting: "Hello #employee_first_name#",
         body: "I hope this message finds you well.",
         opening:
             "I recently came across an exciting opportunity for a #role# position at #company# .",
