@@ -5,11 +5,13 @@ import YourDetails from "../../components/form-component/YourDetails";
 import DisplayResults from "../../components/display-results/DisplayResults";
 import { MyDetailsContext } from "../../context/MyDetailsContext";
 import { Toaster } from "react-hot-toast";
+import HighlightUse from "../../components/highlight-use/HighlightUse";
 
 const Home = () => {
     const [result, setResult] = useState([]);
     return (
         <div className="flex  w-full flex-col gap-10 justify-center items-center">
+            <HighlightUse />
             <YourDetails />
             {/* ADDING CONTEXT */}
             <MyDetailsContext.Provider
