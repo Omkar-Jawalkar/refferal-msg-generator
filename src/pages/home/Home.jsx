@@ -5,11 +5,13 @@ import YourDetails from "../../components/form-component/YourDetails";
 import DisplayResults from "../../components/display-results/DisplayResults";
 import { MyDetailsContext } from "../../context/MyDetailsContext";
 import { Toaster } from "react-hot-toast";
+import HighlightUse from "../../components/highlight-use/HighlightUse";
 
 const Home = () => {
     const [result, setResult] = useState([]);
     return (
         <div className="flex  w-full flex-col gap-10 justify-center items-center">
+            <HighlightUse />
             <YourDetails />
             {/* ADDING CONTEXT */}
             <MyDetailsContext.Provider
@@ -18,9 +20,9 @@ const Home = () => {
                     setResult,
                 }}
             >
-                <div className="flex flex-col   lg:flex-row gap-10 w-full   justify-center items-start">
+                <div className="flex  border p-6 flex-col h-full   max-w-screen-lg    lg:flex-row gap-10 w-full   justify-center items-stretch">
                     <FormComponent />
-                    <span className="text-2xl font-bold">OR</span>
+                    <div className="border-[0.2px]"></div>
                     <CsvComponemt />
                 </div>
                 <div className="w-full border-2 mt-8"></div>
