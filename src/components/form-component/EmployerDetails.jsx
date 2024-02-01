@@ -8,7 +8,8 @@ import generateRandom from "../../utils/generateRandom";
 const EmployerDetails = () => {
     const [firstName] = useLocalStorage("first-name", "");
     const [lastName] = useLocalStorage("last-name", "");
-    const [employeeName, setEmployeeName] = useState("");
+    const [employeeFirstName, setEmployeeFirstName] = useState("");
+    const [employeeLastName, setEmployeeLastName] = useState("");
     const [companyName, setCompanyName] = useState("");
     const [jobId, setJobId] = useState("");
     const [jobLink, setJobLink] = useState("");
@@ -19,7 +20,8 @@ const EmployerDetails = () => {
 
     const gererateRefferalMessage = () => {
         let employeeObj = {
-            employee_name: employeeName,
+            employee_first_name: employeeFirstName,
+            employee_last_name: employeeLastName,
             company: companyName,
             job_id: jobId,
             job_link: jobLink,
@@ -41,17 +43,38 @@ const EmployerDetails = () => {
         <div className=" flex flex-col    w-full gap-2 justify-center items-center">
             <h1 className=" text-xl my-2 font-bold">Employer Details</h1>
 
-            {/* EMPLOYEE NAME */}
-            <div className="w-full space-x-1">
-                <label className="text-slate-500"> Employee Name</label>
-                <input
-                    className="w-full border px-2 py-1 rounded"
-                    value={employeeName}
-                    onChange={(e) => {
-                        setEmployeeName(e.target.value);
-                    }}
-                    placeholder="Eg. Vipul Coelho"
-                />
+            <div className="flex space-x-3">
+                {/* EMPLOYEE First Name */}
+                <div className="w-full flex-1 space-x-1">
+                    <label className="text-slate-500">
+                        {" "}
+                        Employee First Name
+                    </label>
+                    <input
+                        className="w-full border px-2 py-1 rounded"
+                        value={employeeFirstName}
+                        onChange={(e) => {
+                            setEmployeeFirstName(e.target.value);
+                        }}
+                        placeholder="Eg. Vipul"
+                    />
+                </div>
+
+                {/* Employee Last Name */}
+                <div className="w-full flex-1 space-x-1">
+                    <label className="text-slate-500">
+                        {" "}
+                        Employee Last Name
+                    </label>
+                    <input
+                        className="w-full border px-2 py-1 rounded"
+                        value={employeeLastName}
+                        onChange={(e) => {
+                            setEmployeeLastName(e.target.value);
+                        }}
+                        placeholder="Eg. Coelho"
+                    />
+                </div>
             </div>
 
             {/* COMPANY NAME */}

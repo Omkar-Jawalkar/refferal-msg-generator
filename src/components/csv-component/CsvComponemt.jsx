@@ -71,35 +71,27 @@ const CsvComponemt = () => {
     };
 
     return (
-        <div className="flex-1 gap-3 flex flex-col justify-start items-center">
-            <p className="font-bold">
-                {" "}
-                Note - The CSV file should have following fields, with same
-                order. Please refer the{" "}
+        <div className="flex-1 gap-3 px-4  flex flex-col justify-start items-start">
+            <div className="flex justify-center pb-4 items-end w-full">
+                <a href="Refferal-format.csv" download={"Referral_Format"}>
+                    <button className="px-2 py-1  border rounded-md">
+                        Download CSV File Format
+                    </button>
+                </a>
+            </div>
+            <p className="font-semibold">
+                <span className="font-extrabold">Note*</span> - The CSV file
+                should have following fields.Please fill all details and
+                generate Referral Messages.
+                <br />
+                <br />
+                <span>Here is a </span>
                 <span className="underline cursor-pointer text-blue-700">
                     {" "}
                     Video link{" "}
                 </span>
                 more consise understanding.
             </p>
-
-            <div className=" w-full flex justify-between items-center px-7 ">
-                <div>
-                    {fieldsArr.map((field) => {
-                        return (
-                            <p
-                                key={field}
-                                className="font-bold m-0  text-start"
-                            >
-                                {field}
-                            </p>
-                        );
-                    })}
-                </div>
-                <span className="underline cursor-pointer font-bold text-blue-700">
-                    Video Link
-                </span>
-            </div>
 
             <form
                 className="flex flex-col my-4 gap-3 justify-center items-center"
@@ -115,12 +107,13 @@ const CsvComponemt = () => {
                     id="csv-file"
                     className="text-center"
                 />
-                <button
+                <a
+                    href="#result"
                     type="submit"
                     className=" self-stretch bg-green-600 px-2 rounded-md py-1 text-white"
                 >
                     Generate Referral message in Bulk
-                </button>
+                </a>
             </form>
         </div>
     );

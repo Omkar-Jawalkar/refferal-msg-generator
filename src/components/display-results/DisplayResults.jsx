@@ -10,7 +10,7 @@ const DisplayResults = () => {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div id="result" className="flex  flex-col justify-center items-center">
             {/* Note */}
 
             <div className="my-4 flex flex-col justify-center items-center">
@@ -46,21 +46,23 @@ const DisplayResults = () => {
                             className="border-b mb-4 space-y-6 space-x-4 border-black"
                             key={index}
                         >
-                            <th> {res?.employee_name} </th>
-                            <th>{res?.company}</th>
-                            <th>
+                            <td className="bg-red-200 ">
+                                {res?.employee_first_name}
+                            </td>
+                            <td className="bg-blue-200">{res?.company}</td>
+                            <td className="bg-green-200">
                                 <ParseRefferalMessage {...res} />
-                            </th>
-                            <th>
+                            </td>
+                            <td className="bg-orange-200 text-center">
                                 <a
                                     target="_blank"
-                                    className="text-blue-800 underline"
+                                    className="text-blue-800 text-center underline"
                                     href={res?.employee_linkedin_url}
                                     rel="noopener noreferrer"
                                 >
                                     Link
                                 </a>
-                            </th>
+                            </td>
                         </tr>
                     );
                 })}
