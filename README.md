@@ -1,3 +1,4 @@
+
 # Referral Generator 🚀
 
 Welcome to Referral Generator, your go-to tool for effortlessly generating personalized referral messages to supercharge your job application process! 🌟
