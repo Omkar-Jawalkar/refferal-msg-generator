@@ -8,8 +8,10 @@ const YourDetails = () => {
     const [portfolio, setPortfolio] = useLocalStorage("portfolio-link", "");
 
     return (
-        <div className="flex gap-2 px-7 w-full  flex-1 flex-col justify-center items-center ">
-            <h1 className=" text-xl my-2 font-bold">Your Details</h1>
+        <div className="flex border max-w-screen-lg gap-2 px-7 py-4 w-full  flex-1 flex-col justify-center items-center ">
+            <h1 className=" text-2xl underline mb-6 font-bold">
+                Please Fill Your Details
+            </h1>
 
             <div className="flex w-full flex-col md:flex-row gap-3">
                 {/* FIRST NAME */}
@@ -41,7 +43,7 @@ const YourDetails = () => {
 
             {/* Your Role  */}
             <div className="w-full space-x-1">
-                <label className="text-slate-500"> Role</label>
+                <label className="text-slate-500">Job Role you want</label>
                 <input
                     className="w-full border px-2 py-1 rounded"
                     value={role}
@@ -90,7 +92,6 @@ const YourDetails = () => {
             <span className="text-end w-full pt-4 font-semibold">
                 *Your Information will be stored on your browser.
             </span>
-            <div className="w-full border-2 mt-8"></div>
         </div>
     );
 };

@@ -41,11 +41,14 @@ const EmployerDetails = () => {
 
     return (
         <div className=" flex flex-col    w-full gap-2 justify-center items-center">
-            <h1 className=" text-xl my-2 font-bold">Employer Details</h1>
+            <h1 className=" text-xl underline mb-6 font-bold">
+                {" "}
+                Please Enter Employer Details
+            </h1>
 
             <div className="flex space-x-3">
                 {/* EMPLOYEE First Name */}
-                <div className="w-full flex-1 space-x-1">
+                <div  className="w-full flex-1 space-x-1">
                     <label className="text-slate-500">
                         {" "}
                         Employee First Name
@@ -136,9 +139,9 @@ const EmployerDetails = () => {
                 onClick={() => {
                     gererateRefferalMessage();
                 }}
-                className=" rounded-md shadow-sm py-1 bg-green-600 px-3 text-white "
+                className=" rounded-md shadow-sm mt-4 py-1 bg-green-600 px-3 text-white "
             >
-                Generate Refferal Message
+                <a href="#result">Generate Refferal Message</a>
             </button>
         </div>
     );

@@ -20,9 +20,9 @@ const Home = () => {
                     setResult,
                 }}
             >
-                <div className="flex flex-col   lg:flex-row gap-10 w-full   justify-center items-start">
+                <div className="flex  border p-6 flex-col h-full   max-w-screen-lg    lg:flex-row gap-10 w-full   justify-center items-stretch">
                     <FormComponent />
-                    <span className="text-2xl font-bold">OR</span>
+                    <div className="border-[0.2px]"></div>
                     <CsvComponemt />
                 </div>
                 <div className="w-full border-2 mt-8"></div>

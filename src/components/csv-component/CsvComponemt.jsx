@@ -71,10 +71,10 @@ const CsvComponemt = () => {
     };
 
     return (
-        <div className="flex-1 gap-3 px-4  flex flex-col justify-start items-start">
+        <div className="flex-1 gap-3 px-4  flex flex-col justify-start items-center">
             <div className="flex justify-center pb-4 items-end w-full">
                 <a href="Refferal-format.csv" download={"Referral_Format"}>
-                    <button className="px-2 py-1  border rounded-md">
+                    <button className="px-2 py-1 shadow-md  border border-black/35 rounded-md">
                         Download CSV File Format
                     </button>
                 </a>
@@ -110,7 +110,7 @@ const CsvComponemt = () => {
                 <a
                     href="#result"
                     type="submit"
-                    className=" self-stretch bg-green-600 px-2 rounded-md py-1 text-white"
+                    className=" mt-6 text-center self-stretch bg-green-600 px-2 rounded-md py-1 text-white"
                 >
                     Generate Referral message in Bulk
                 </a>
