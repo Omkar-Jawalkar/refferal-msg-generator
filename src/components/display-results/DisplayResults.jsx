@@ -14,7 +14,7 @@ const DisplayResults = () => {
             {/* Note */}
 
             <div className="my-4 pb-6 flex flex-col justify-center items-center">
-                <span className="text-lg">
+                <span className="text-lg text-center px-3">
                     Just copy the{" "}
                     <span className="font-bold">referral message</span>, we have
                     written it for you.
