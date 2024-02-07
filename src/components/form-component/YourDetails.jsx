@@ -9,14 +9,22 @@ const YourDetails = () => {
 
     return (
         <div className="flex border max-w-screen-lg gap-2 px-7 py-4 w-full  flex-1 flex-col justify-center items-center ">
-            <h1 className=" text-2xl underline mb-6 font-bold">
-                Please Fill Your Details
+            <h1 className=" flex flex-col space-y-2 justify-center items-center text-lg underline mb-6 font-bold">
+                <span className="text-green-700 underline text-2xl">
+                    OnBoarding
+                </span>
+                Please Fill your details
             </h1>
 
             <div className="flex w-full flex-col md:flex-row gap-3">
+                {/* <span className="w-full text-right text-gray-400">
+                    * required
+                </span> */}
                 {/* FIRST NAME */}
                 <div className="w-full space-x-1">
-                    <label className="text-slate-500"> First Name</label>
+                    <label className="text-slate-500 flex justify-between items-center">
+                        <span>First Name*</span>
+                    </label>
                     <input
                         className="w-full border px-2 py-1 rounded"
                         value={firstName}
@@ -29,7 +37,7 @@ const YourDetails = () => {
 
                 {/* LAST NAME */}
                 <div className="w-full space-x-1">
-                    <label className="text-slate-500"> Last Name</label>
+                    <label className="text-slate-500"> Last Name*</label>
                     <input
                         className="w-full border px-2 py-1 rounded"
                         value={lastName}
@@ -43,7 +51,7 @@ const YourDetails = () => {
 
             {/* Your Role  */}
             <div className="w-full space-x-1">
-                <label className="text-slate-500">Job Role you want</label>
+                <label className="text-slate-500">Job Role you want*</label>
                 <input
                     className="w-full border px-2 py-1 rounded"
                     value={role}

@@ -4,15 +4,19 @@ import FormComponent from "../../components/form-component/FormComponent";
 import YourDetails from "../../components/form-component/YourDetails";
 import DisplayResults from "../../components/display-results/DisplayResults";
 import { MyDetailsContext } from "../../context/MyDetailsContext";
+import UserDetailInputModel from "../../components/user-detail-input-model/UserDetailInputModel";
+
 import { Toaster } from "react-hot-toast";
 import HighlightUse from "../../components/highlight-use/HighlightUse";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Home = () => {
     const [result, setResult] = useState([]);
+
     return (
         <div className="flex  w-full flex-col gap-10 justify-center items-center">
             <HighlightUse />
-            <YourDetails />
+
             {/* ADDING CONTEXT */}
             <MyDetailsContext.Provider
                 value={{
@@ -28,6 +32,7 @@ const Home = () => {
                 <div className="w-full border-2 mt-8"></div>
                 <DisplayResults />
             </MyDetailsContext.Provider>
+
             <Toaster />
         </div>
     );
