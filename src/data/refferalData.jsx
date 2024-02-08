@@ -1,6 +1,6 @@
 export const data = [
     {
-        greeting: "Hello #employee_first_name#",
+        greeting: "Hello #employee_first_name# , ",
         body: "I hope this message finds you well.",
         opening:
             "I recently came across an exciting opportunity for a #role# position at #company# .",
@@ -21,7 +21,7 @@ export const data = [
     // grateful if you could refer me.
     //   I can ASSURE you it won't be a waste of time.
     {
-        greeting: "Hello #employee_name#",
+        greeting: "Hello #employee_first_name#",
         body: "Hope you are doing well.",
         opening:
             "I am looking for work opportunities and have found an exciting role #role# (Fresher Hiring) at your organization.",

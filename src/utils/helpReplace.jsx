@@ -3,6 +3,8 @@ export default function helpReplace(myName, dataObj, refferalObject) {
     // Replace the property values of refferalMessageObject to dataObject Property values
     // Eg. replace refferalMessageObject.property in which ${employee_name} to dataObj.employee_name value
 
+    // console.log("before", refferalObjectCpy);
+
     for (const property in refferalObjectCpy) {
         for (const myDataProp in dataObj) {
             refferalObjectCpy[property] = refferalObjectCpy[property].replace(
@@ -16,6 +18,8 @@ export default function helpReplace(myName, dataObj, refferalObject) {
         "#myName#",
         myName
     );
+
+    // console.log("after", refferalObjectCpy);
 
     return refferalObjectCpy;
 }

@@ -48,7 +48,7 @@ const EmployerDetails = () => {
 
             <div className="flex space-x-3">
                 {/* EMPLOYEE First Name */}
-                <div  className="w-full flex-1 space-x-1">
+                <div className="w-full flex-1 space-x-1">
                     <label className="text-slate-500">
                         {" "}
                         Employee First Name
@@ -65,10 +65,7 @@ const EmployerDetails = () => {
 
                 {/* Employee Last Name */}
                 <div className="w-full flex-1 space-x-1">
-                    <label className="text-slate-500">
-                        {" "}
-                        Employee Last Name
-                    </label>
+                    <label className="text-slate-500">Employee Last Name</label>
                     <input
                         className="w-full border px-2 py-1 rounded"
                         value={employeeLastName}

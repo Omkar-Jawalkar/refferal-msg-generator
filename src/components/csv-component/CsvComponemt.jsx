@@ -10,32 +10,36 @@ const CsvComponemt = () => {
     const [lastName] = useLocalStorage("last-name", "");
     const { setResult } = useContext(MyDetailsContext);
     const [parsedData, setParsedData] = useState(null);
-    const [fieldsArr] = useState([
-        "employee_name",
-        "company",
-        "role",
-        "job_link",
-        "job_id",
-        "employee_linkedin_url",
-    ]);
 
     const parseCsvData = (csvString) => {
         let resultObj = [];
         const csvArr = csvString.split("\n");
         let headings = csvArr[0].split(",");
-        // console.log(headings);
+        let headingsArrayLength = headings?.length;
+        let lastItemOfHeading = headings[headingsArrayLength - 1];
+
+        headings[headingsArrayLength - 1] = lastItemOfHeading.substr(
+            0,
+            lastItemOfHeading.length - 1
+        );
+
+        console.log("headings", headings);
+
         for (let i = 1; i < csvArr.length; i++) {
             let obj = {};
-            let arrElements = csvArr[i].split(",");
-            arrElements.map((ele, index) => {
+            let csvRow = csvArr[i].split(",");
+
+            console.log("csvRow", csvRow);
+            csvRow.map((field, index) => {
                 let heading = headings[index];
-                if (index === arrElements.length - 1 && ele.endsWith("\r")) {
-                    if (heading.endsWith("\r")) {
-                        let newHeading = heading.substr(0, heading.length - 1);
-                        obj[newHeading] = ele.substr(0, ele.length - 1);
-                    }
+                if (index === csvRow.length - 1 && field.endsWith("\r")) {
+                    obj[heading] = field.substr(0, field.length - 1);
+                    // if (heading.endsWith("\r")) {
+                    //     let newHeading = heading.substr(0, heading.length - 1);
+                    //     obj[newHeading] = field.substr(0, field.length - 1);
+                    // }
                 } else {
-                    obj[heading] = ele;
+                    obj[heading] = field;
                 }
             });
             resultObj.push(obj);
@@ -47,11 +51,8 @@ const CsvComponemt = () => {
     useEffect(() => {
         if (parsedData !== null) {
             parsedData.map((item) => {
-                let obj = helpReplace(
-                    firstName + " " + lastName,
-                    item,
-                    data[0]
-                );
+                let myData = JSON.parse(JSON.stringify(data[0]));
+                let obj = helpReplace(firstName + " " + lastName, item, myData);
                 setResult((prev) => [...prev, { ...obj, ...item }]);
             });
         }
@@ -64,6 +65,7 @@ const CsvComponemt = () => {
 
         reader.onload = async (e) => {
             const csvString = e.target.result;
+            console.log(csvString);
             parseCsvData(csvString);
         };
 
@@ -107,13 +109,12 @@ const CsvComponemt = () => {
                     id="csv-file"
                     className="text-center"
                 />
-                <a
-                    href="#result"
+                <button
                     type="submit"
                     className=" mt-6 text-center self-stretch bg-green-600 px-2 rounded-md py-1 text-white"
                 >
                     Generate Referral message in Bulk
-                </a>
+                </button>
             </form>
         </div>
     );
