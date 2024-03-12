@@ -13,7 +13,7 @@ const YourDetails = () => {
                 <span className="text-green-700 underline text-2xl">
                     OnBoarding
                 </span>
-                Please Fill your details
+                Come on, Lets Fill your details
             </h1>
 
             <div className="flex w-full flex-col md:flex-row gap-3">
