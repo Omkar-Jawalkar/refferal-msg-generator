@@ -22,15 +22,16 @@ const UserDetailInputModel = ({ setOpenDialog, openDialog }) => {
 
     return (
         <dialog
-            className="p-0   backdrop:bg-black backdrop:bg-opacity-80"
+            className="p-0 backdrop:bg-black backdrop:bg-opacity-80"
             ref={dialogRef}
         >
             <YourDetails />
             <button
+                title="save-button"
                 onClick={() => {
                     setOpenDialog(false);
                 }}
-                className="bg-green-700 m-2 text-md text-white rounded-md px-2 py-1"
+                className="px-2 py-1 m-2 text-white bg-green-700 rounded-md text-md"
             >
                 Save and Close
             </button>
