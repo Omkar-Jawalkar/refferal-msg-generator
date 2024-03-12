@@ -14,7 +14,7 @@ const Home = () => {
     const [result, setResult] = useState([]);
 
     return (
-        <div className="flex  w-full flex-col gap-10 justify-center items-center">
+        <div className="flex flex-col items-center justify-center w-full gap-10">
             <HighlightUse />
 
             {/* ADDING CONTEXT */}
@@ -24,12 +24,12 @@ const Home = () => {
                     setResult,
                 }}
             >
-                <div className="flex  border p-6 flex-col h-full   max-w-screen-lg    lg:flex-row gap-10 w-full   justify-center items-stretch">
+                <div className="flex flex-col items-stretch justify-center w-full h-full max-w-screen-lg gap-10 p-6 border lg:flex-row">
                     <FormComponent />
                     <div className="border-[0.2px]"></div>
-                    <CsvComponemt />
+                    <CsvComponemt />        
                 </div>
-                <div className="w-full border-2 mt-8"></div>
+                <div className="w-full mt-8 border-2"></div>
                 <DisplayResults />
             </MyDetailsContext.Provider>
 
