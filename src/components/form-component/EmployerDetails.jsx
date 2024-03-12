@@ -8,11 +8,13 @@ import generateRandom from "../../utils/generateRandom";
 const EmployerDetails = () => {
     const [firstName] = useLocalStorage("first-name", "");
     const [lastName] = useLocalStorage("last-name", "");
-    const [employeeFirstName, setEmployeeFirstName] = useState("");
-    const [employeeLastName, setEmployeeLastName] = useState("");
-    const [companyName, setCompanyName] = useState("");
-    const [jobId, setJobId] = useState("");
-    const [jobLink, setJobLink] = useState("");
+    const [employeeFirstName, setEmployeeFirstName] = useState("Bill");
+    const [employeeLastName, setEmployeeLastName] = useState("Gates");
+    const [companyName, setCompanyName] = useState("Microsoft");
+    const [jobId, setJobId] = useState("1671397");
+    const [jobLink, setJobLink] = useState(
+        "https://jobs.careers.microsoft.com/global/en/job/1671397/Frontend-Engineer"
+    );
     const [role] = useState("Frontend Developer");
     // Role removed
     const [linkedinUrl, setLinkedinUrl] = useState("");
@@ -41,16 +43,14 @@ const EmployerDetails = () => {
 
     return (
         <div className=" flex flex-col    w-full gap-2 justify-center items-center">
-            <h1 className=" text-xl underline mb-6 font-bold">
-                {" "}
-                Please Enter Employer Details
+            <h1 className=" text-xl underline mb-6 text-center font-bold">
+                Can you fill some details of an employee?
             </h1>
 
             <div className="flex space-x-3">
                 {/* EMPLOYEE First Name */}
                 <div className="w-full flex-1 space-x-1">
                     <label className="text-slate-500">
-                        {" "}
                         Employee First Name
                     </label>
                     <input

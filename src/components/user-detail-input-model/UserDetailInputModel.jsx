@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import YourDetails from "../form-component/YourDetails";
+import Welcome from "../welcome-screen/Welcome";
 const UserDetailInputModel = ({ setOpenDialog, openDialog }) => {
     const dialogRef = useRef();
+    const [step, setStep] = useState(1);
 
     // useEffect(() => {
     //     dialogRef.current.removeAttribute("open");
@@ -25,16 +27,22 @@ const UserDetailInputModel = ({ setOpenDialog, openDialog }) => {
             className="p-0 backdrop:bg-black backdrop:bg-opacity-80"
             ref={dialogRef}
         >
-            <YourDetails />
-            <button
-                title="save-button"
-                onClick={() => {
-                    setOpenDialog(false);
-                }}
-                className="px-2 py-1 m-2 text-white bg-green-700 rounded-md text-md"
-            >
-                Save and Close
-            </button>
+            {step === 2 ? (
+                <>
+                    <YourDetails />
+                    <button
+                        title="save-button"
+                        onClick={() => {
+                            setOpenDialog(false);
+                        }}
+                        className="px-2 py-1 m-2 text-white bg-green-700 rounded-md text-md"
+                    >
+                        Save and Close
+                    </button>{" "}
+                </>
+            ) : (
+                <Welcome setStep={setStep} />
+            )}
         </dialog>
     );
 };
