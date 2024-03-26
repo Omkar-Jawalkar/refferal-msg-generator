@@ -20,6 +20,15 @@ const EmployerDetails = () => {
     const [linkedinUrl, setLinkedinUrl] = useState("");
     const { setResult } = useContext(MyDetailsContext);
 
+    const resetStates = () => {
+        setEmployeeFirstName("");
+        setEmployeeLastName("");
+        setCompanyName("");
+        setJobId("");
+        setJobLink("");
+        setLinkedinUrl("");
+    };
+
     const gererateRefferalMessage = () => {
         let employeeObj = {
             employee_first_name: employeeFirstName,
@@ -32,13 +41,13 @@ const EmployerDetails = () => {
         };
 
         let rand = generateRandom(data.length);
-        console.log("random number ", rand);
         const obj = helpReplace(
             firstName + " " + lastName,
             employeeObj,
             data[rand]
         );
         setResult((prev) => [...prev, { ...obj, ...employeeObj }]);
+        resetStates();
     };
 
     return (
